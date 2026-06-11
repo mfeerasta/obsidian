@@ -1,0 +1,21 @@
+- [Website business](website-business.md) — M's Windsor/Detroit local-website business: model, beachhead, stack, workspace
+- [Archie website-funnel](archie-website-funnel.md) — the business deployed as an autonomous Archie skill on hermes (paused cron, draft-only, approval-gated billing)
+- [Voice agent](voice-agent.md) — Archie's ElevenLabs phone agent: Creator plan blocks v3/expressive, tuned for human-likeness via prompt + lower stability
+- [Paid-key permission](paid-key-permission.md) — ask M before using any paid per-use API key (Anthropic/Gemini/ElevenLabs/etc); infra keys (Cloudflare/Hostinger) need no permission
+- [Brand architecture](brand-architecture.md) — Feerasta Industries parent; "Feer-" branded-house naming (Feerstone/Feercraft/Feerwave/Feervoice); Feer- domains all both-free
+- [Website build skills](website-build-skills.md) — 4 installed web-build skills (website-intelligence/image-generator/3d-animation-creator/seo-strategy) + playbook folding them into our stack
+- [Feerasta brochure](feerasta-brochure.md) — Canva meeting brochure (design DAHLvQiHcws), 5 divisions, navy architectural imagery via Higgsfield, ~/Desktop/feerasta-brochure.pdf
+- [Feerasta incorporations](feerasta-incorporations.md) — 5 services built from Claude Research folder (Aria restaurants, Local-SEO audit, Invoice Chaser, Brand Voice, second-brain MVP) in lead-engine, dry-run by default
+- [Avatar walkthrough](avatar-walkthrough.md) — plan for remote website walkthroughs via an AI avatar of M (HeyGen LiveAvatar live; Higgsfield async-only); staged async-video to live-avatar to real-M; PDF on Desktop
+- [No em dashes](no-em-dashes.md) — hard rule: never use em dashes anywhere, ever (emails, docs, chat, code). Use comma/colon/period instead
+- [Miso voice loop](miso-voice-loop.md) — self-hosted Miso One TTS Pipecat loop scaffold (voice-agent/miso/), GPU-gated, free STT+LLM+TTS, falls back to Brian/ElevenLabs
+- [Tenant agents layer](tenant-agents-layer.md) — multi-tenant per-client agent layer (archie-tenant-agents/): one isolated Hermes profile per client, the white-label MRR product, dry-run, not yet deployed
+- [Bilal Bay Ridge demos](bilal-bayridge-demos.md) — Bilal Siddiqui's verified leads + 3 live Lovable demo sites for his in-person pitches
+- [Archie health Jun 2026](archie-health-2026-06.md) — live hermes audit: WhatsApp bridge + Google token both dead, 4 noisy crons paused, /root husk removed
+- [Two-market pricing](pricing-two-market.md) — US raised vs CA unchanged; geo-switch (CF /cdn-cgi/trace + toggle) live on feerasta.ai; Sophie's = first NY target
+- [Verifiable info only](verifiable-info-only.md) — client sites state only info verifiable from their existing website + Google profile; if neither exists, omit those claims/tools
+- [Sovereign + Intelligence](sovereign-intelligence.md) — Intelligence = 4 plug-and-play agent templates (receptionist/operator/textback/responder) in docs/intelligence/; Sovereign buildout plan in docs/
+- [Archie sandbox + email](archie-sandbox-email.md) — Archie's tools run in a Docker sandbox: stage files in the workspace mount, sync the Gmail token into the sandbox home; built 10 Bilal pitch drafts this way
+- [Stripe demo checkout](stripe-demo-checkout.md) — buy button on each demo site; live keys+catalog exist but card_payments still in Stripe review (the real blocker); reusable Lovable pay components; branding how-to
+- [Agentic shift playbook](agentic-shift-playbook.md) — analysis of Paperclip/MONEY-3D-sites/AEO/YC-AI-services mapped to Feerasta (mostly already our model); upgrades to apply now + patterns to bank for another business; SHIPPED the /agents AEO endpoint; docs/agentic-shift-playbook.md
+- [Memory architecture](memory-architecture.md) — Claude Code file-memory vs Archie's iCloud/Hermes Obsidian vault are separate; Obsidian is NOT connected to this Claude Code (no MCP); how to bridge if wanted

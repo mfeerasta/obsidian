@@ -1,0 +1,24 @@
+---
+name: agentic-shift-playbook
+description: "Analysis of 4 agentic-era sources (Paperclip, Jack Roberts 3D-site/MONEY, AEO/agent-internet, YC AI-native-services) mapped to Feerasta + reusable for other businesses"
+metadata: 
+  node_type: memory
+  type: project
+  originSessionId: e5377b22-a7ba-4a0e-a66d-8ef60de63cac
+---
+
+M dropped 4 sources to analyze + incorporate into the business + bank for a future business (2026-06-11). Full writeup: `docs/agentic-shift-playbook.md` (+ PDF `~/Downloads/Claude Files/Feerasta-Agentic-Shift-Playbook.pdf`). See [[website-business]], [[archie-website-funnel]], [[sovereign-intelligence]], [[tenant-agents-layer]], [[website-build-skills]].
+
+**Through-line:** software is becoming agents-that-deliver-an-outcome; the web is splitting into a human layer + an agent layer. Feerasta already sits in this (Archie-run local-website agency + Sovereign private-AI + Intelligence agent templates). Not a pivot. 3 of 4 are direct upgrades now; the 4th (AEO) is a roadmap + new product line.
+
+**The 4, mapped to us:**
+1. **Paperclip** (agent-orchestration "zero-human company": AI CEO hires agents, heartbeat memory, work-as-issues one-agent-per-task, routines, global rules, QA/eval agent, import proven teams) → adopt the OPERATING MODEL for Archie (roles + heartbeat + issues + routines + a QA/eval agent that screenshots/checks demos before they ship); our Intelligence templates = an importable "Feerasta team"; optionally dogfood the agency on Paperclip (bring-your-own-bot, runs Claude Code). Caveat the creator gave: org structures unproven, taste is the human's job.
+2. **Jack Roberts MONEY framework + premium-3D-site stack** → MONEY (Map boring niches / Obtain+enrich leads / Nail beautiful sites / Execute free demo / Yield recurring) IS our exact funnel, now named. Build-stack UPGRADE we already own the skills for: Firecrawl brand-extract → Nano Banana 2 hero+exploded assets → scroll-stop animation (`3d-animation-creator`) → HTML-extract the prospect's current site to replicate structure → `seo` skill for pages+schema+audit → Vercel/Cloudflare. Premium scroll-stop demos = differentiator vs flat Lovable pages. (Nano Banana 2 = paid per image, ask M.)
+3. **AEO / agentic internet** (agents are the customer; structured docs/capability-manifests/action-endpoints/executable-support/MCP/`/agents` over human marketing; SEO→AEO = get cited by agents) → make feerasta.ai + client demos agent-readable (`/agents` page, `llms.txt` already exists, schema via SEO skill, small MCP server exposing hours/services/booking). NEW PRODUCT LINE: "agent-readiness / AEO" as an Ascent add-on. Sovereign brain already exposes a localhost OpenAI API = natively agent-ready.
+4. **YC AI-native services** (deliver the outcome not a co-pilot; market test = low-trust/already-outsourced + low-judgment-tasks + high-intelligence-threshold + regulated-moat; human is the interface, product is the automated op; sell outcomes not seats; track throughput/cycle-time/**variance**/COGS; AI operating leverage 30%→50%+ margin; cap pilots "early demand trap"; build not buy) → frames BOTH the agency (sell the outcome = a working/growing site, track per-client COGS = Lovable+Claude+voice+Bilal-time, cap to a handful of Brooklyn pilots, kill variance with a templated QA'd build) AND the **Sovereign-law-firm vertical** (regulated = moat, sell the outcome) which already exists as the S1 law brain.
+
+**Save-for-later (business-agnostic patterns):** (1) agent-org template = roles+heartbeat+issues+routines+QA/eval+global-rules; (2) the premium-site build pipeline (Firecrawl→NanoBanana2→scroll-stop→HTML-extract→SEO→host); (3) the MONEY free-asset→recurring funnel; (4) the YC AI-native-services operating manual; (5) agent-native infra product ideas (identity/permissions, wallet, inbox, analytics, MCP-for-franchises) = a pure-software bet if ever wanted.
+
+**Next actions (small, ordered):** rename funnel as MONEY; build ONE premium scroll-stop demo with the new pipeline for a top Brooklyn lead + A/B vs the Lovable version; add a QA/eval agent to Archie that checks demos before they ship; add `/agents`+schema to feerasta.ai + package agent-readiness as an Ascent add-on; hold the Sovereign-law vertical to YC's sell-the-outcome framing.
+
+**SHIPPED 2026-06-11 (the AEO move):** `/agents` (capability page + JSON-LD), `/agents.json` (machine manifest: 4 services + the `POST /api/contact` action endpoint w/ field schema), upgraded `llms.txt` "For agents" section, all live on feerasta.ai (`portfolio-site/agents.html|agents.json|llms.txt`, deployed via deploy.sh). This is the reusable agent-readable surface to also sell to clients (Ascent add-on). Gotcha: do NOT add `_redirects` `/agents /agents.html 200` (loops with Cloudflare's default .html-strip); CF serves `/agents` from `agents.html` natively. Still queued (no spend): premium scroll-stop demo pipeline, QA/eval agent in Archie, MONEY relabel.
