@@ -31,4 +31,5 @@
 - [AI employee + CAIO playbook](ai-employee-caio-playbook.md) — Cheney (fractional CAIO $10-25k/mo) + Orgo ($5k/mo managed AI employee) mapped to Feerasta: Executive tier for Intelligence (tenant agents repriced $2.5-5k/mo flat) + Training/Fractional-AI-Officer ladder for Sovereign; no new brand line; docs/ai-employee-caio-playbook.md
 - [Ledger app demo](ledger-app-demo.md) — Feerasta Ledger working demo LIVE (feerasta-ledger.feerstone.workers.dev), ledger-app/ on CF Worker, zero-spend in-worker seed, real overcharge/cashflow/AR/ask logic, stubbed at OCR/SMS/Plaid; full plan in docs/ledger-build-plan.md
 - [Hospitality hotel lead](hospitality-hotel-lead.md) — Comfort Inn Windsor warm lead via M sister; pitch the GM/owner; hospitality = 10th resources vertical; voice agent fit for border hotels
+- [Maps Places API](maps-places-api.md): google-maps MCP bound to a disabled project; use the websitecreator-498218 key (in vault) via direct curl for lead pulls
 - [Pulse product](pulse-product.md): live busyness/occupancy product folded UNDER Edge (not a 7th line); OAK-D sensor stack in pulse-sensor/, pitch PDF, gym/retail/nightlife use cases, in AEO assets
