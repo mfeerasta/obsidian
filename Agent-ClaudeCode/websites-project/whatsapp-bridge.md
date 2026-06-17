@@ -1,0 +1,26 @@
+---
+name: whatsapp-bridge
+description: "The WhatsApp bridge Worker that backs the Intelligence/Ledger WhatsApp claims, packaged as the $49 Assistant on-ramp tier"
+metadata: 
+  node_type: memory
+  type: project
+  originSessionId: e5377b22-a7ba-4a0e-a66d-8ef60de63cac
+---
+
+Built 2026-06-16 to back the site claims added that day (Intelligence "forward/snap/voice-note to one number", Ledger "snap a receipt to WhatsApp"). Lives in `whatsapp-bridge/` (worker.js + extract.js + wrangler.toml + deploy.sh + README).
+
+- **Channel = Meta WhatsApp Cloud API, NOT Twilio** (M's standing ask: avoid Twilio). Webhook GET verify + POST receive, Graph API media download + send.
+- **Vision/LLM = NVIDIA free dev-tier NIM** (same nvapi- key as the voice agent), models meta/llama-3.2-11b-vision-instruct + llama-3.1-8b-instruct. Zero spend.
+- **Env-gated**: deploys and runs with NO secrets (webhook verify + `/simulate` work as labelled stubs). Live at https://feerasta-whatsapp.feerstone.workers.dev.
+- **To go live M provides** (wrangler secret put): WHATSAPP_TOKEN, WHATSAPP_PHONE_NUMBER_ID, WHATSAPP_VERIFY_TOKEN, NVIDIA_API_KEY. Then point the Meta webhook at /webhook. README has the steps.
+- Optional KV namespace `FILES` persists parsed docs; next step is feeding parsed invoices into ledger-app's `analyzeInvoice` and per-tenant context for text answers.
+
+**Productized as "Feerasta Assistant"**, the $49/mo US ($69 CAD) cheap on-ramp tier on the pricing page + AEO (agents.json id "assistant", llms.txt). The low-friction front door that upgrades into [[sovereign-intelligence]] Intelligence and [[ledger-app-demo]] Ledger.
+
+**PACK ENGINE (2026-06-17):** `whatsapp-bridge/packs.js` turns the one bridge into many products via `PACK` env (or `{pack}` in /simulate). Packs: **estadia** (Alojamento Local guest concierge), **independente** (freelancer/recibos-verdes admin, refuses tax advice), **loja** (WhatsApp commerce, MB WAY), **imovel** (real-estate lead capture), **assistant** (default). All multilingual (reply in contact's language) + Article 50 disclosure. **Bumped answer model to `meta/llama-3.3-70b-instruct`** (free NIM) because 8b drifted to Portuguese for English guests; 70b follows language correctly (verified EN→EN, PT→PT, FR→FR). Non-doc packs ack photos instead of invoice-parsing. These ARE the Portugal Tier-1/2 chat services, all on one deployment. Voice side: `voice-agent/nvidia/prompt_multi.py` (multilingual front desk, `AGENT_LANG=multi`). **EU compliance scanner** = separate Worker `eu-compliance-scanner/` LIVE at feerasta-compliance.feerstone.workers.dev (EAA/WCAG + GDPR/cookie + Art.50 checks via HTMLRewriter, branded report, free-audit lead magnet). New site page **feerasta.ai/portugal** surfaces all 7 PT services + links the scanner; AEO updated (agents.json "portugal" service + Lisbon market, llms.txt). Voice multilingual still gated on paid ElevenLabs TTS [[pricing-two-market]].
+
+**MULTI-TENANT (2026-06-17):** bridge is now a real product, not a demo. `tenants.js` + KV (TENANTS id e0fc79ec60064cc8848b2222b1a8edb9, STORE id 13731c02fce0458690f71e87a876a25d, both bound in wrangler.toml). Tenant keyed by Meta `phone_number_id` (one number per client); each has own pack/lang/context. Endpoints added: `POST /admin/tenant` (onboard a client w/o redeploy), `GET /records?tenant=&token=` (owner dashboard), both gated by `ADMIN_TOKEN` secret (set, value dbc0227eb22b1c8a8c984caf). Records (docs/leads/messages) persist per tenant in STORE. In-code demo tenants: `chiado-demo` (estadia + Chiado flat context), `loja-demo`. Webhook signature (WHATSAPP_APP_SECRET) + SSRF guards (scanner) hardened per security review. Verified: per-tenant context isolation works (chiado-demo answers from flat context incl. €25 late-checkout upsell; KV-onboarded sophie-salon answers from its own prices). Security: webhook unsigned→401, admin/records→401 without token.
+
+**VOICE GO-LIVE prep (2026-06-17):** M approved ElevenLabs (paid). Voice chosen = **"Paulo PT" Lisbon accent multilingual, shared-lib id aLFUti4k8YKvtQGXv0UO** (MUST be Added to the ElevenLabs account first, then use the account copy id). bot.py has TTS_PROVIDER=elevenlabs hook; .env.example + `docs/voice-golive-runbook.md` written (second hermes instance feerasta-voice-pt :8091, voicept.feerasta.ai, AGENT_LANG=pt|multi). TWO blockers: (1) add the voice in EL UI → paste account voice id, (2) a +351 number + Twilio creds. Key = POLYMATH_ELEVENLABS_API_KEY (vault, flagged for rotation). NVIDIA free TTS has no pt.
+
+Related: [[voice-agent]] (same NVIDIA key, the phone side), [[portugal-feasibility]], [[agentic-shift-playbook]].

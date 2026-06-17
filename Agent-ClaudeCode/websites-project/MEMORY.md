@@ -34,3 +34,4 @@
 - [No closing line](no-closing-line.md): outreach emails end at the CTA, no "good luck"/sign-off pleasantry
 - [Maps Places API](maps-places-api.md): google-maps MCP bound to a disabled project; use the websitecreator-498218 key (in vault) via direct curl for lead pulls
 - [Pulse product](pulse-product.md): live busyness/occupancy product folded UNDER Edge (not a 7th line); OAK-D sensor stack in pulse-sensor/, pitch PDF, gym/retail/nightlife use cases, in AEO assets
+- [WhatsApp bridge](whatsapp-bridge.md) — Meta-Cloud-API (no Twilio) Worker backing the WhatsApp claims, NVIDIA free vision, env-gated, live as the $49 Assistant on-ramp tier; needs M to add WABA+NVIDIA secrets
