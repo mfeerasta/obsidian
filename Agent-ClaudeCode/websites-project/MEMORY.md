@@ -35,3 +35,7 @@
 - [Maps Places API](maps-places-api.md): google-maps MCP bound to a disabled project; use the websitecreator-498218 key (in vault) via direct curl for lead pulls
 - [Pulse product](pulse-product.md): live busyness/occupancy product folded UNDER Edge (not a 7th line); OAK-D sensor stack in pulse-sensor/, pitch PDF, gym/retail/nightlife use cases, in AEO assets
 - [WhatsApp bridge](whatsapp-bridge.md) — Meta-Cloud-API (no Twilio) Worker backing the WhatsApp claims, NVIDIA free vision, env-gated, live as the $49 Assistant on-ramp tier; needs M to add WABA+NVIDIA secrets
+- [Feerasta Listings](feerasta-listings.md) — real-estate content+capture bundle prototype: live microsite (feerasta-listings.workers.dev) + per-listing imovel booking agent; staging/video gen paid + pending; not on site yet
+- [Bespoke + advisory law](bespoke-and-advisory-law.md) — 7th line Feerasta Bespoke (custom AI/software, LIVE) + the consulting/financial-advisory licensing rule (build tools=free; investment/legal/accounting advice=licensed; we stay tools-not-advice)
+- [Brand boutique direction](brand-boutique-direction.md) — M wants boutique/mysterious not SaaS-catalog; two-register plan (quiet priceless front + priced SMB deeper); quiet homepage draft live at feerasta.ai/quiet
+- [Lead dashboard + revenue GTM](lead-dashboard-and-revenue-gtm.md) — LIVE sales lead-gen dashboard (feerasta-leads.workers.dev, code d410675fcd2d) + sell-revenue-not-savings angle, Win-Back founding offer, outreach motion

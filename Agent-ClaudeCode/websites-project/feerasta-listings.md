@@ -1,0 +1,20 @@
+---
+name: feerasta-listings
+description: "Feerasta Listings prototype, the real-estate content+capture bundle (microsite + per-listing imovel agent + staging/video pipeline)"
+metadata: 
+  node_type: memory
+  type: project
+  originSessionId: e5377b22-a7ba-4a0e-a66d-8ef60de63cac
+---
+
+Built 2026-06-17 from the AI-content-services research (docs/ai-content-services.md, recommended #1 to build). The real-estate listing bundle: per listing = virtual staging + AI walkthrough video + multilingual description + microsite + the listing's own WhatsApp booking agent (the imovel pack from [[whatsapp-bridge]]). Sell "listing to booked viewing," not commoditized staging. Buyer = agents/agencies (Lisbon boom + NA). €99-199/listing or €299-599/mo.
+
+**Built + LIVE (no spend):** `listings-app/` Worker `feerasta-listings` at https://feerasta-listings.feerstone.workers.dev/sample-t2-lisbon . Data-driven microsite per slug (light premium theme, raw/staged gallery toggle, video slot, EN/PT/FR/ES description switch, **live booking chat** wired to the listing's bridge tenant via /simulate, multi-turn). `listings-app/listings.js` = listing data (one fictional demo `sample-t2-lisbon`). Each listing = a bridge tenant (id=slug, pack=imovel, property context + booking_url) created via the admin API (ADMIN_TOKEN). Verified: agent is property-aware (beds/baths/price/availability from context), books viewings, multilingual.
+
+**NOT built (paid, needs M OK):** the staging + walkthrough-video GENERATION (Higgsfield/Nanobanana image, Higgsfield video, optional HeyGen avatar + ElevenLabs voice). Pipeline runbook = `docs/listings-pipeline.md`; generated assets drop into listings.js (hero/gallery[].staged/video_url) then redeploy. Offered to generate a real sample on M's go-ahead.
+
+**NOT on the marketing site yet** (M's call: build + show first, push later). Not linked from feerasta.ai. Legal: all demos FICTIONAL, virtual-staging disclosure in the microsite footer. Known nit: 70b answers ~90% in the contact's language (occasional English→pt slip).
+
+**DATA-BACKED PLAYBOOK (2026-06-17, `docs/listings-playbook.md` + PDF):** our operating standard ("best quality, reasonable cost, honest by default" = the brand). Key data: stage only the 3 rooms that move buyers (living room 86%, primary bedroom 84%, kitchen 23%; guest rooms 7% = skip); pro photos sell 32% faster + $3.4-11.2k more; **video = 403% more inquiries but only 9% of agents do it = our differentiator**; curb-appeal hero +7%, 1/10-sec first impression, first 3 days peak. Enhancement ladder (declutter/brighten/correct = no disclosure; sky/twilight/staging = disclose + keep original). HARD LINE (brand + legal): never remove damage, change sqft, add fake features/people/architecture = misrepresentation. **Per-market tailoring for the site (we already geo-detect US/CA/PT):** US = USD, Zillow/MLS, ROI-direct, AB723(Jan-2026)+Colorado-AI disclosure; Canada = CAD, Realtor.ca/RECO, same tone; **Portugal = EUR, Idealista/Imovirtual (not Zillow), staging culture EMERGING (early-mover edge), "key-ready/light/space", multilingual (foreign buyers pay +49%/m² Lisbon), relationship-first warm tone, EU AI Act Art.50 disclosure**. Lisbon €6,059/m². This spec drives the Listings page copy per market when we push to site. **BUILT 2026-06-17:** the agent-facing SERVICE page is live in the listings worker at `/` (MARKETS config + servicePage() in listings-app/worker.js), geo-served by request.cf.country with `?market=us|ca|pt` override. Three tailored variants verified distinct: US (AB723/all-50-states, MLS/Zillow, ROI tone, USD), CA (Realtor.ca/RECO, CAD), PT (Idealista/Imovirtual, Lei UE da IA, "pronto a habitar", multilingual, relationship tone, EUR, bilingual copy). Navy brand theme (ports to feerasta.ai later). Microsites still at /<slug>, dev list at /_demos. NOT linked from feerasta.ai yet.
+
+Related: [[whatsapp-bridge]] (imovel pack + tenant/admin API + CORS widget), [[ai-content-services]] research, [[portugal-feasibility]], [[pricing-two-market]] (geo US/CA/PT).
